@@ -30,9 +30,9 @@ function calcularEdad(fechaNacimientoISO) {
 function verificarAcceso() {
   const valor = birthdateInput.value;
 
-  // Sin fecha de nacimiento no hay forma de confirmar la mayoría de edad: se envía a contenido apto para todo público.
+  // Sin fecha de nacimiento se muestra un aviso para que el usuario la ingrese.
   if (!valor) {
-    window.location.href = REDIRECCION_MENOR;
+    gateError.textContent = "Debes ingresar tu fecha de nacimiento para continuar.";
     return false;
   }
 

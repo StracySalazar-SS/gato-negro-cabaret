@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Bloquea el acceso directo si no se verificó la mayoría de edad o no se leyó el manifiesto.
+      if (sessionStorage.getItem("edadVerificada") !== "true") {
+        window.location.replace("acceso.html");
+      } else if (sessionStorage.getItem("manifiestoVisto") !== "true") {
+        window.location.replace("manifiesto.html");
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gato Negro Cabaret & Burlesque · Formulario de Audición Artística</title>
+    <meta
+      name="description"
+      content="Convocatoria y formulario de audición artística de Gato Negro Cabaret & Burlesque. México crea. El escenario decide."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="audition-page">
+      <header class="audition-intro container">
+        <img class="audition-logo" src="assets/img/LogoGN.png" alt="Gato Negro Cabaret & Burlesque" />
+        <p class="section-tag">Convocatoria y formulario de audición artística</p>
+        <p class="intro-motto">México crea. El escenario decide.</p>
+
+        <p class="intro-lead">
+          Gato Negro Cabaret &amp; Burlesque abre su proceso de selección para integrar a artistas
+          escénicos de distintas disciplinas a su compañía y producciones.
+        </p>
+        <p class="intro-emphasis">Buscamos artistas, no estereotipos.</p>
+        <p class="intro-lead">
+          Personas con oficio, disciplina, presencia escénica, personalidad, cultura de trabajo y
+          algo propio que decir sobre un escenario.
+        </p>
+        <p class="intro-lead">
+          Aquí caben el teatro y el circo; la danza y la música; la magia y la comedia; el
+          burlesque, las variedades, la acrobacia, el cabaret clásico y aquello que todavía no
+          sabemos cómo llamar.
+        </p>
+        <p class="intro-lead">
+          No buscamos un único cuerpo, una única estética ni una única forma de belleza.
+        </p>
+        <p class="intro-lead">Buscamos algo bastante más difícil de encontrar:</p>
+        <p class="intro-emphasis intro-emphasis--big">talento.</p>
+      </header>
+
+      <form class="audition-form container" id="castingForm" novalidate>
+        <!-- 1. ANTES DE COMENZAR -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>01</span> Antes de comenzar</legend>
+
+          <p class="section-copy">
+            Gato Negro Cabaret &amp; Burlesque es un espectáculo profesional dirigido
+            exclusivamente a público adulto.
+          </p>
+          <p class="section-copy">
+            Nuestra propuesta artística puede incorporar sensualidad, irreverencia, humor para
+            adultos, vestuario escénico revelador, burlesque y, dependiendo del número y de la
+            voluntad expresa de cada intérprete, desnudo parcial artístico.
+          </p>
+          <p class="section-copy">
+            Ninguna modalidad de desnudo o burlesque es requisito general para participar en el
+            proceso de selección.
+          </p>
+          <p class="section-copy">
+            Las decisiones relativas al cuerpo, vestuario y grado de exposición escénica de cada
+            artista deberán ser previamente conocidas, expresamente consentidas y acordadas para
+            cada número.
+          </p>
+
+          <p class="subsection-title">Declaraciones iniciales obligatorias</p>
+          <p class="section-copy">Antes de continuar:</p>
+
+          <div class="checklist">
+            <label class="check-item">
+              <input type="checkbox" name="declaracion_mayoria_edad" required />
+              <span>Declaro bajo protesta de decir verdad que soy mayor de 18 años de edad.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="declaracion_manifiesto_leido" required />
+              <span>He leído íntegramente el Manifiesto y Filosofía Artística de Gato Negro Cabaret &amp; Burlesque.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="declaracion_cuerpo_territorio" required />
+              <span>Comprendo que GNCB concibe al cuerpo humano como territorio soberano y a la sensualidad, el desnudo artístico y el burlesque como posibles lenguajes de expresión escénica.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="declaracion_principios" required />
+              <span>Comprendo que el respeto, la autonomía corporal, el consentimiento y la libertad artística forman parte de los principios de la producción.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="declaracion_naturaleza_adulta" required />
+              <span>Comprendo la naturaleza adulta, irreverente y potencialmente provocadora del espectáculo.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="declaracion_sin_obligacion" required />
+              <span>Comprendo que participar en esta convocatoria no implica obligación alguna de realizar desnudo, topless o burlesque.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="declaracion_limites_respetados" required />
+              <span>Comprendo que mis límites personales y artísticos deberán ser respetados y que podré manifestarlos claramente durante este proceso.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="declaracion_participacion_voluntaria" required />
+              <span>Acepto participar voluntariamente en este proceso de selección artística.</span>
+            </label>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="nombreCompleto">Nombre completo</label>
+              <input id="nombreCompleto" name="nombreCompleto" type="text" required />
+            </div>
+            <div class="field">
+              <label for="fechaNacimiento">Fecha de nacimiento</label>
+              <input id="fechaNacimiento" name="fechaNacimiento" type="date" required />
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="nacionalidad">Nacionalidad</label>
+              <input id="nacionalidad" name="nacionalidad" type="text" required />
+            </div>
+            <div class="field">
+              <label for="ciudadPais">Ciudad y país de residencia</label>
+              <input id="ciudadPais" name="ciudadPais" type="text" required />
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="telefono">Teléfono / WhatsApp</label>
+              <input id="telefono" name="telefono" type="tel" required />
+            </div>
+            <div class="field">
+              <label for="correo">Correo electrónico</label>
+              <input id="correo" name="correo" type="email" required />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 2. QUEREMOS CONOCER AL ARTISTA -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>02</span> Queremos conocer al artista</legend>
+
+          <p class="section-copy">Un currículum puede decirnos dónde estudiaste.</p>
+          <p class="section-copy">Esta sección pretende decirnos quién eres cuando se abre el telón.</p>
+
+          <div class="field">
+            <label for="nombreArtistico">Nombre artístico</label>
+            <input id="nombreArtistico" name="nombreArtistico" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="quienEres">
+              Cuéntanos quién eres como artista
+              <small>No nos entregues una biografía corporativa. Queremos conocer tu historia, tu formación, tus obsesiones creativas, tus influencias y aquello que te llevó al escenario.</small>
+            </label>
+            <textarea id="quienEres" name="quienEres" rows="5" required></textarea>
+          </div>
+
+          <div class="field">
+            <label for="identidadArtistica">¿Cómo describirías tu identidad artística en tres conceptos?</label>
+            <input id="identidadArtistica" name="identidadArtistica" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="marcaPersonal">¿Qué haces sobre un escenario que difícilmente podría hacer otra persona exactamente como tú?</label>
+            <textarea id="marcaPersonal" name="marcaPersonal" rows="4"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="influencias">¿Qué artistas, compañías, movimientos o espectáculos han influido en tu trabajo?</label>
+            <textarea id="influencias" name="influencias" rows="4"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="trabajoOrgullo">¿Cuál ha sido hasta hoy el trabajo escénico del que te sientes más orgulloso y por qué?</label>
+            <textarea id="trabajoOrgullo" name="trabajoOrgullo" rows="4"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="formacionProfesional">
+              Formación profesional
+              <small>Escuelas, conservatorios, compañías, maestros, talleres, certificaciones y especialidades relevantes.</small>
+            </label>
+            <textarea id="formacionProfesional" name="formacionProfesional" rows="4"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="experienciaProfesional">
+              Experiencia profesional
+              <small>Producciones, compañías, teatros, festivales, giras, conciertos, televisión, cine, cruceros, parques, espectáculos residentes u otros trabajos relevantes.</small>
+            </label>
+            <textarea id="experienciaProfesional" name="experienciaProfesional" rows="4"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="idiomas">
+              Idiomas
+              <small>Indica idioma y nivel hablado/cantado cuando corresponda.</small>
+            </label>
+            <input id="idiomas" name="idiomas" type="text" />
+          </div>
+        </fieldset>
+
+        <!-- 3. TU CAJA DE HERRAMIENTAS -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>03</span> Tu caja de herramientas</legend>
+          <p class="section-copy">
+            Marca todo aquello que realmente puedas defender profesionalmente sobre un escenario.
+          </p>
+
+          <p class="subsection-title">Interpretación, cabaret y variedades</p>
+          <div class="skill-grid">
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Actuación teatral" /><span>Actuación teatral</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Teatro musical" /><span>Teatro musical</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Improvisación" /><span>Improvisación</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Comedia" /><span>Comedia</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Stand-up" /><span>Stand-up</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Clown" /><span>Clown</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Pantomima / mimo" /><span>Pantomima / mimo</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Commedia dell'Arte" /><span>Commedia dell'Arte</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Maestro/a de ceremonias / MC" /><span>Maestro/a de ceremonias / MC</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Presentación / conducción" /><span>Presentación / conducción</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Cabaret" /><span>Cabaret</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Burlesque" /><span>Burlesque</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Neo-burlesque" /><span>Neo-burlesque</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Boylesque / burlesque masculino" /><span>Boylesque / burlesque masculino</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Drag" /><span>Drag</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Transformismo" /><span>Transformismo</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Performance" /><span>Performance</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Teatro físico" /><span>Teatro físico</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Teatro de objetos" /><span>Teatro de objetos</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Títeres / marionetas" /><span>Títeres / marionetas</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Ventriloquia" /><span>Ventriloquia</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Fonomímica / lip sync" /><span>Fonomímica / lip sync</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Recitación / spoken word" /><span>Recitación / spoken word</span></label>
+            <label class="check-item"><input type="checkbox" name="interpretacion" value="Otro" /><span>Otro</span></label>
+          </div>
+
+          <p class="subsection-title">Canto y música</p>
+          <div class="skill-grid">
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Cantante solista" /><span>Cantante solista</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Cantante de ensamble" /><span>Cantante de ensamble</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Coros" /><span>Coros</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Canto lírico" /><span>Canto lírico</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Jazz" /><span>Jazz</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Blues" /><span>Blues</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Cabaret / chanson" /><span>Cabaret / chanson</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Pop" /><span>Pop</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Rock" /><span>Rock</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Bolero" /><span>Bolero</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Ranchero / música mexicana" /><span>Ranchero / música mexicana</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Rap / hip-hop" /><span>Rap / hip-hop</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Beatbox" /><span>Beatbox</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Instrumentista" /><span>Instrumentista</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Multiinstrumentista" /><span>Multiinstrumentista</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Pianista" /><span>Pianista</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Guitarrista" /><span>Guitarrista</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Bajista" /><span>Bajista</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Baterista / percusionista" /><span>Baterista / percusionista</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Instrumentos de viento" /><span>Instrumentos de viento</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Instrumentos de cuerda" /><span>Instrumentos de cuerda</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Director/a musical" /><span>Director/a musical</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Composición / arreglos" /><span>Composición / arreglos</span></label>
+            <label class="check-item"><input type="checkbox" name="canto_musica" value="Otro" /><span>Otro</span></label>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="instrumentosNivel">Instrumentos y nivel</label>
+              <input id="instrumentosNivel" name="instrumentosNivel" type="text" />
+            </div>
+            <div class="field">
+              <label for="registroVocal">Registro vocal</label>
+              <input id="registroVocal" name="registroVocal" type="text" />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 4. DANZA Y MOVIMIENTO -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>04</span> Danza y movimiento</legend>
+
+          <div class="skill-grid">
+            <label class="check-item"><input type="checkbox" name="danza" value="Ballet" /><span>Ballet</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Jazz" /><span>Jazz</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Broadway jazz" /><span>Broadway jazz</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza contemporánea" /><span>Danza contemporánea</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza moderna" /><span>Danza moderna</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Tap" /><span>Tap</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Claqué / tap dance" /><span>Claqué / tap dance</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Charleston" /><span>Charleston</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Cancán" /><span>Cancán</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Swing" /><span>Swing</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Lindy Hop" /><span>Lindy Hop</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Ballroom" /><span>Ballroom</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Tango" /><span>Tango</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Salsa" /><span>Salsa</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Bachata" /><span>Bachata</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Mambo" /><span>Mambo</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza latina" /><span>Danza latina</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Flamenco" /><span>Flamenco</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza española" /><span>Danza española</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza folclórica mexicana" /><span>Danza folclórica mexicana</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza urbana" /><span>Danza urbana</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Hip-hop" /><span>Hip-hop</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Waacking" /><span>Waacking</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Voguing" /><span>Voguing</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Heels" /><span>Heels</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Pole dance / pole art" /><span>Pole dance / pole art</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Chair dance" /><span>Chair dance</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Floorwork" /><span>Floorwork</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza del vientre" /><span>Danza del vientre</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza con abanicos" /><span>Danza con abanicos</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Fan dance / abanicos de plumas" /><span>Fan dance / abanicos de plumas</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Danza con utilería" /><span>Danza con utilería</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Coreografía" /><span>Coreografía</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Dance captain" /><span>Dance captain</span></label>
+            <label class="check-item"><input type="checkbox" name="danza" value="Otro" /><span>Otro</span></label>
+          </div>
+
+          <div class="field">
+            <label for="nivelDanza">Nivel técnico y años de entrenamiento</label>
+            <input id="nivelDanza" name="nivelDanza" type="text" />
+          </div>
+        </fieldset>
+
+        <!-- 5. CIRCO, ACROBACIA Y ESPECIALIDADES -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>05</span> Circo, acrobacia y especialidades</legend>
+
+          <p class="section-copy">
+            Si el cabaret sobrevivió desde 1881, fue en buena medida porque tuvo la saludable
+            costumbre de apropiarse de prácticamente cualquier cosa maravillosa que pudiera
+            subirse a un escenario.
+          </p>
+
+          <div class="skill-grid">
+            <label class="check-item"><input type="checkbox" name="circo" value="Acrobacia de piso" /><span>Acrobacia de piso</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Acrobacia en pareja" /><span>Acrobacia en pareja</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Hand balancing" /><span>Hand balancing</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Contorsión" /><span>Contorsión</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Equilibrismo" /><span>Equilibrismo</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Adagio acrobático" /><span>Adagio acrobático</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Trapecio" /><span>Trapecio</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Trapecio volante" /><span>Trapecio volante</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Trapecio dance" /><span>Trapecio dance</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Aro aéreo / lyra" /><span>Aro aéreo / lyra</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Telas aéreas" /><span>Telas aéreas</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Cuerda aérea" /><span>Cuerda aérea</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Straps" /><span>Straps</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Hammock" /><span>Hammock</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Pole aéreo" /><span>Pole aéreo</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Hair suspension" /><span>Hair suspension</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Flying pole" /><span>Flying pole</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Malabarismo" /><span>Malabarismo</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Hula hoops" /><span>Hula hoops</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Diábolo" /><span>Diábolo</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Manipulación de objetos" /><span>Manipulación de objetos</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Rola-bola" /><span>Rola-bola</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Monociclo" /><span>Monociclo</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Zancos" /><span>Zancos</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Patinaje artístico / roller" /><span>Patinaje artístico / roller</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Acrobacia sobre patines" /><span>Acrobacia sobre patines</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Cyr wheel" /><span>Cyr wheel</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="German wheel" /><span>German wheel</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Chinese pole" /><span>Chinese pole</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Hand-to-hand" /><span>Hand-to-hand</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Icarian games" /><span>Icarian games</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Antipodismo" /><span>Antipodismo</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Equilibrio sobre objetos" /><span>Equilibrio sobre objetos</span></label>
+            <label class="check-item"><input type="checkbox" name="circo" value="Otro" /><span>Otro</span></label>
+          </div>
+
+          <p class="subsection-title">Artes de riesgo y especialidades</p>
+          <div class="skill-grid">
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Escapismo" /><span>Escapismo</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Manipulación escénica de fuego" /><span>Manipulación escénica de fuego</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Fire eating" /><span>Fire eating</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Fire breathing" /><span>Fire breathing</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Knife throwing" /><span>Knife throwing</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Whip cracking" /><span>Whip cracking</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Sword swallowing" /><span>Sword swallowing</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Strongman / strongwoman" /><span>Strongman / strongwoman</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Stage combat" /><span>Stage combat</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Esgrima escénica" /><span>Esgrima escénica</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Caídas / stunt performance" /><span>Caídas / stunt performance</span></label>
+            <label class="check-item"><input type="checkbox" name="riesgo" value="Otra especialidad" /><span>Otra especialidad</span></label>
+          </div>
+
+          <div class="field">
+            <label for="detalleCircoRiesgo">Describe tu especialidad, nivel, años de experiencia y certificaciones de seguridad cuando correspondan</label>
+            <textarea id="detalleCircoRiesgo" name="detalleCircoRiesgo" rows="4"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- 6. MAGIA, ILUSIONISMO Y CURIOSIDADES -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>06</span> Magia, ilusionismo y curiosidades</legend>
+
+          <div class="skill-grid">
+            <label class="check-item"><input type="checkbox" name="magia" value="Magia de escenario" /><span>Magia de escenario</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Grandes ilusiones" /><span>Grandes ilusiones</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Manipulación" /><span>Manipulación</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Cartomagia" /><span>Cartomagia</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Mentalismo" /><span>Mentalismo</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Pickpocket escénico" /><span>Pickpocket escénico</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Escapismo" /><span>Escapismo</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Quick change" /><span>Quick change</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Shadow performance" /><span>Shadow performance</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Light performance" /><span>Light performance</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Teatro negro" /><span>Teatro negro</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Bubble art" /><span>Bubble art</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Puppetry" /><span>Puppetry</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Freak show / sideshow contemporáneo" /><span>Freak show / sideshow contemporáneo</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Novelty act" /><span>Novelty act</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Specialty act" /><span>Specialty act</span></label>
+            <label class="check-item"><input type="checkbox" name="magia" value="Otra disciplina difícil de clasificar" /><span>Otra disciplina difícil de clasificar</span></label>
+          </div>
+
+          <div class="field">
+            <label for="detalleMagia">Cuéntanos qué haces</label>
+            <textarea id="detalleMagia" name="detalleMagia" rows="4"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- 7. EL CUERPO -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>07</span> El cuerpo</legend>
+
+          <p class="section-copy">No buscamos una respuesta correcta.</p>
+          <p class="section-copy">Buscamos una respuesta tuya.</p>
+
+          <div class="field">
+            <label for="cuerpoArte">¿Qué significa para ti el cuerpo humano dentro del arte?</label>
+            <textarea id="cuerpoArte" name="cuerpoArte" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="relacionCuerpo">¿Cómo es tu relación con tu propio cuerpo?</label>
+            <textarea id="relacionCuerpo" name="relacionCuerpo" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="sensualidad">¿Qué significa para ti la sensualidad?</label>
+            <textarea id="sensualidad" name="sensualidad" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="sensualidadErotismo">¿Dónde distingues personalmente entre sensualidad, erotismo y sexualización?</label>
+            <textarea id="sensualidadErotismo" name="sensualidadErotismo" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="cuerpoNarrativo">¿Consideras que el cuerpo puede funcionar como instrumento narrativo y artístico? ¿Por qué?</label>
+            <textarea id="cuerpoNarrativo" name="cuerpoNarrativo" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="limitesPersonales">¿Qué límites personales consideras importantes cuando trabajas corporalmente sobre un escenario?</label>
+            <textarea id="limitesPersonales" name="limitesPersonales" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="reaccionDireccion">¿Cómo reaccionas cuando una dirección artística te pide modificar, explorar o abandonar una propuesta escénica?</label>
+            <textarea id="reaccionDireccion" name="reaccionDireccion" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="presenciaVsAtencion">Para ti, ¿qué diferencia existe entre tener presencia escénica y querer ser el centro de atención?</label>
+            <textarea id="presenciaVsAtencion" name="presenciaVsAtencion" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="ego">
+              Háblanos de tu ego.
+              <small>Todos los artistas tenemos uno. Preferimos conocerlo durante el casting y no descubrirlo durante la temporada.</small>
+            </label>
+            <textarea id="ego" name="ego" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="ensamble">¿Qué significa para ti formar parte de un ensamble?</label>
+            <textarea id="ensamble" name="ensamble" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="aplausoAjeno">Cuando otro artista recibe el aplauso más grande de la noche, ¿qué ocurre dentro de ti?</label>
+            <textarea id="aplausoAjeno" name="aplausoAjeno" rows="4"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- 8. BURLESQUE, DESNUDO ARTÍSTICO Y LÍMITES ESCÉNICOS -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>08</span> Burlesque, desnudo artístico y límites escénicos</legend>
+
+          <p class="section-copy">Esta sección no determina por sí misma tu elegibilidad.</p>
+          <p class="section-copy">Queremos saber qué deseas hacer y, con igual importancia, qué no deseas hacer.</p>
+
+          <p class="subsection-title">Burlesque</p>
+          <div class="radio-group" role="radiogroup" aria-label="Interés en burlesque">
+            <label class="radio-item"><input type="radio" name="interesBurlesque" value="Sí, me interesa interpretar números de burlesque." required /><span>Sí, me interesa interpretar números de burlesque.</span></label>
+            <label class="radio-item"><input type="radio" name="interesBurlesque" value="Sí, tengo experiencia profesional en burlesque." /><span>Sí, tengo experiencia profesional en burlesque.</span></label>
+            <label class="radio-item"><input type="radio" name="interesBurlesque" value="Me interesa explorarlo aunque todavía no tengo experiencia." /><span>Me interesa explorarlo aunque todavía no tengo experiencia.</span></label>
+            <label class="radio-item"><input type="radio" name="interesBurlesque" value="No me interesa realizar burlesque." /><span>No me interesa realizar burlesque.</span></label>
+          </div>
+
+          <p class="subsection-title">
+            Exposición corporal escénica
+            <small>Marca exclusivamente aquello con lo que actualmente te sentirías cómodo/a trabajando profesionalmente:</small>
+          </p>
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Vestuario tradicional de cabaret." /><span>Vestuario tradicional de cabaret.</span></label>
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Vestuario sensual o revelador." /><span>Vestuario sensual o revelador.</span></label>
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Lencería / vestuario equivalente de escena." /><span>Lencería / vestuario equivalente de escena.</span></label>
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Pasties / cubrepezones escénicos." /><span>Pasties / cubrepezones escénicos.</span></label>
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Topless artístico." /><span>Topless artístico.</span></label>
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Torso masculino descubierto / bare-chested performance." /><span>Torso masculino descubierto / bare-chested performance.</span></label>
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Desnudo parcial artístico." /><span>Desnudo parcial artístico.</span></label>
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Prefiero no realizar ningún tipo de desnudo." /><span>Prefiero no realizar ningún tipo de desnudo.</span></label>
+            <label class="check-item"><input type="checkbox" name="exposicionCorporal" value="Prefiero hablar personalmente sobre mis límites durante el casting." /><span>Prefiero hablar personalmente sobre mis límites durante el casting.</span></label>
+          </div>
+
+          <div class="field">
+            <label for="limitesEscenicos">¿Existe algún límite corporal, de vestuario, contacto físico o contenido escénico que quieras establecer desde ahora?</label>
+            <textarea id="limitesEscenicos" name="limitesEscenicos" rows="4"></textarea>
+          </div>
+
+          <p class="section-note">
+            Tu respuesta a esta sección podrá ser modificada posteriormente. El consentimiento
+            para una modalidad artística no implica consentimiento para ninguna otra y deberá
+            establecerse específicamente en cada producción o número.
+          </p>
+        </fieldset>
+
+        <!-- 9. MATERIAL DE AUDICIÓN -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>09</span> Material de audición</legend>
+
+          <div class="field">
+            <label for="demoReelUrl">
+              Demo Reel · Enlace principal
+              <small>YouTube, Vimeo, Drive u otra plataforma accesible para el equipo de casting.</small>
+            </label>
+            <input id="demoReelUrl" name="demoReelUrl" type="url" placeholder="https://..." required />
+          </div>
+
+          <div class="field">
+            <label for="videoAdicionalUrl">Video adicional</label>
+            <input id="videoAdicionalUrl" name="videoAdicionalUrl" type="url" placeholder="https://..." />
+          </div>
+
+          <div class="field">
+            <label for="videoArchivo">Subir archivo de video</label>
+            <input id="videoArchivo" name="videoArchivo" type="file" accept="video/*" />
+          </div>
+
+          <div class="field">
+            <label for="portafolioUrl">Sitio web / portafolio</label>
+            <input id="portafolioUrl" name="portafolioUrl" type="url" placeholder="https://..." />
+          </div>
+
+          <p class="subsection-title">
+            Fotografías profesionales
+            <small>Sube material reciente que permita conocer tu trabajo y presencia escénica.</small>
+          </p>
+          <div class="checklist checklist--inline">
+            <label class="check-item"><input type="checkbox" name="tipoFoto" value="Headshot" /><span>Headshot</span></label>
+            <label class="check-item"><input type="checkbox" name="tipoFoto" value="Retrato" /><span>Retrato</span></label>
+            <label class="check-item"><input type="checkbox" name="tipoFoto" value="Cuerpo completo" /><span>Cuerpo completo</span></label>
+            <label class="check-item"><input type="checkbox" name="tipoFoto" value="Fotografía escénica" /><span>Fotografía escénica</span></label>
+            <label class="check-item"><input type="checkbox" name="tipoFoto" value="Fotografía de personaje" /><span>Fotografía de personaje</span></label>
+            <label class="check-item"><input type="checkbox" name="tipoFoto" value="Fotografía de especialidad" /><span>Fotografía de especialidad</span></label>
+            <label class="check-item"><input type="checkbox" name="tipoFoto" value="Material adicional" /><span>Material adicional</span></label>
+          </div>
+
+          <div class="field">
+            <label for="fotografias">Subida múltiple de fotografías</label>
+            <input id="fotografias" name="fotografias" type="file" accept="image/*" multiple />
+            <p class="field-hint">No requerimos fotografías íntimas ni desnudos como parte de esta solicitud.</p>
+          </div>
+
+          <div class="field">
+            <label for="curriculumArchivo">Currículum artístico (archivo PDF)</label>
+            <input id="curriculumArchivo" name="curriculumArchivo" type="file" accept="application/pdf" />
+          </div>
+
+          <div class="field">
+            <label for="curriculumUrl">Currículum artístico (enlace alternativo)</label>
+            <input id="curriculumUrl" name="curriculumUrl" type="url" placeholder="https://..." />
+          </div>
+        </fieldset>
+
+        <!-- 10. REDES Y PRESENCIA DIGITAL -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>10</span> Redes y presencia digital</legend>
+          <p class="section-copy">Comparte únicamente aquellas que utilices profesional o públicamente.</p>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="redInstagram">Instagram</label>
+              <input id="redInstagram" name="redInstagram" type="text" placeholder="URL / usuario" />
+            </div>
+            <div class="field">
+              <label for="redTiktok">TikTok</label>
+              <input id="redTiktok" name="redTiktok" type="text" placeholder="URL / usuario" />
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="redFacebook">Facebook</label>
+              <input id="redFacebook" name="redFacebook" type="url" placeholder="https://..." />
+            </div>
+            <div class="field">
+              <label for="redYoutube">YouTube</label>
+              <input id="redYoutube" name="redYoutube" type="url" placeholder="https://..." />
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="redVimeo">Vimeo</label>
+              <input id="redVimeo" name="redVimeo" type="url" placeholder="https://..." />
+            </div>
+            <div class="field">
+              <label for="redX">X</label>
+              <input id="redX" name="redX" type="text" placeholder="URL / usuario" />
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="redThreads">Threads</label>
+              <input id="redThreads" name="redThreads" type="text" placeholder="URL / usuario" />
+            </div>
+            <div class="field">
+              <label for="redLinkedin">LinkedIn</label>
+              <input id="redLinkedin" name="redLinkedin" type="url" placeholder="https://..." />
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="redImdb">IMDb</label>
+              <input id="redImdb" name="redImdb" type="url" placeholder="https://..." />
+            </div>
+            <div class="field">
+              <label for="redMusica">Spotify / Apple Music / plataforma musical</label>
+              <input id="redMusica" name="redMusica" type="url" placeholder="https://..." />
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="redSitioWeb">Sitio web</label>
+              <input id="redSitioWeb" name="redSitioWeb" type="url" placeholder="https://..." />
+            </div>
+            <div class="field">
+              <label for="redOtra">Otra</label>
+              <input id="redOtra" name="redOtra" type="url" placeholder="https://..." />
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- 11. DISPONIBILIDAD PROFESIONAL -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>11</span> Disponibilidad profesional</legend>
+
+          <div class="field">
+            <label for="companiaActual">¿Actualmente perteneces a alguna compañía o producción?</label>
+            <input id="companiaActual" name="companiaActual" type="text" />
+          </div>
+
+          <p class="subsection-title">¿Tienes representación artística?</p>
+          <div class="radio-group" role="radiogroup" aria-label="Representación artística">
+            <label class="radio-item"><input type="radio" name="representacion" value="Sí" /><span>Sí</span></label>
+            <label class="radio-item"><input type="radio" name="representacion" value="No" /><span>No</span></label>
+          </div>
+
+          <div class="field">
+            <label for="agenciaRepresentante">Agencia / representante</label>
+            <input id="agenciaRepresentante" name="agenciaRepresentante" type="text" />
+          </div>
+
+          <p class="subsection-title">¿Tienes disponibilidad para ensayos presenciales en Ciudad de México?</p>
+          <div class="radio-group" role="radiogroup" aria-label="Disponibilidad para ensayos en CDMX">
+            <label class="radio-item"><input type="radio" name="disponibilidadEnsayos" value="Sí" required /><span>Sí</span></label>
+            <label class="radio-item"><input type="radio" name="disponibilidadEnsayos" value="No" /><span>No</span></label>
+            <label class="radio-item"><input type="radio" name="disponibilidadEnsayos" value="Depende de fechas" /><span>Depende de fechas</span></label>
+          </div>
+
+          <p class="subsection-title">¿Tienes disponibilidad para temporadas nocturnas y fines de semana?</p>
+          <div class="radio-group" role="radiogroup" aria-label="Disponibilidad para temporadas nocturnas">
+            <label class="radio-item"><input type="radio" name="disponibilidadNocturna" value="Sí" required /><span>Sí</span></label>
+            <label class="radio-item"><input type="radio" name="disponibilidadNocturna" value="No" /><span>No</span></label>
+            <label class="radio-item"><input type="radio" name="disponibilidadNocturna" value="Depende de fechas" /><span>Depende de fechas</span></label>
+          </div>
+
+          <p class="subsection-title">¿Tienes disponibilidad para viajar?</p>
+          <div class="radio-group" role="radiogroup" aria-label="Disponibilidad para viajar">
+            <label class="radio-item"><input type="radio" name="disponibilidadViajar" value="Nacionalmente" /><span>Nacionalmente</span></label>
+            <label class="radio-item"><input type="radio" name="disponibilidadViajar" value="Internacionalmente" /><span>Internacionalmente</span></label>
+            <label class="radio-item"><input type="radio" name="disponibilidadViajar" value="Ambas" /><span>Ambas</span></label>
+            <label class="radio-item"><input type="radio" name="disponibilidadViajar" value="No actualmente" /><span>No actualmente</span></label>
+          </div>
+
+          <p class="subsection-title">¿Cuentas con pasaporte vigente?</p>
+          <div class="radio-group" role="radiogroup" aria-label="Pasaporte vigente">
+            <label class="radio-item"><input type="radio" name="pasaporteVigente" value="Sí" /><span>Sí</span></label>
+            <label class="radio-item"><input type="radio" name="pasaporteVigente" value="No" /><span>No</span></label>
+          </div>
+        </fieldset>
+
+        <!-- 12. ALGO QUE NO TE HAYAMOS PREGUNTADO -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>12</span> Algo que no te hayamos preguntado</legend>
+
+          <p class="section-copy">
+            Los formularios tienen la mala costumbre de intentar meter seres humanos dentro de
+            casillas.
+          </p>
+          <p class="section-copy">Ésta es tu oportunidad de escapar de ellas.</p>
+
+          <div class="field">
+            <label for="algoMas">¿Qué debemos saber de ti que no te preguntamos?</label>
+            <textarea id="algoMas" name="algoMas" rows="5"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- 13. DECLARACIÓN DE VERACIDAD Y REVISIÓN PROFESIONAL -->
+        <fieldset class="form-section">
+          <legend class="section-kicker"><span>13</span> Declaración de veracidad y revisión profesional</legend>
+
+          <p class="section-copy">Al enviar esta solicitud:</p>
+
+          <div class="checklist">
+            <label class="check-item">
+              <input type="checkbox" name="veracidad_datos" required />
+              <span>Declaro bajo protesta de decir verdad que la información proporcionada por mí es verdadera y corresponde a mi experiencia, preparación e identidad profesional.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="veracidad_materiales" required />
+              <span>Declaro que los materiales, créditos y antecedentes profesionales que presento son auténticos o cuento con autorización para utilizarlos.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="autorizacion_verificacion" required />
+              <span>Autorizo a Gato Negro Cabaret &amp; Burlesque y al personal responsable de su proceso de casting a verificar razonablemente mis antecedentes y referencias profesionales, incluyendo créditos artísticos, experiencia, formación, representación y referencias laborales, exclusivamente para efectos de esta selección.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="comprende_documentacion" required />
+              <span>Comprendo que podrán solicitarme posteriormente documentación que acredite mi identidad y mayoría de edad.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="autorizacion_datos" required />
+              <span>Autorizo el tratamiento de los datos proporcionados en este formulario para los fines relacionados con el proceso de audición, casting y eventual contratación, conforme al Aviso de Privacidad correspondiente.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="comprende_no_oferta" required />
+              <span>Comprendo que completar este formulario no constituye una oferta laboral, promesa de contratación ni garantiza una audición presencial.</span>
+            </label>
+            <label class="check-item">
+              <input type="checkbox" name="comprende_contratacion_independiente" required />
+              <span>Comprendo que cualquier participación profesional posterior estará sujeta a selección, negociación y contratación independiente.</span>
+            </label>
+          </div>
+
+          <div class="field-grid">
+            <div class="field">
+              <label for="nombreDeclaracion">Nombre completo</label>
+              <input id="nombreDeclaracion" name="nombreDeclaracion" type="text" required />
+            </div>
+            <div class="field">
+              <label for="fechaDeclaracion">Fecha</label>
+              <input id="fechaDeclaracion" name="fechaDeclaracion" type="date" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="firmaAceptacion">Firma / aceptación electrónica</label>
+            <input id="firmaAceptacion" name="firmaAceptacion" type="text" placeholder="Escribe tu nombre completo como firma electrónica" required />
+          </div>
+        </fieldset>
+
+        <!-- 14. ¿QUÉ SIGUE? -->
+        <section class="form-section form-section--closing">
+          <p class="section-kicker"><span>14</span> ¿Qué sigue?</p>
+
+          <p class="section-copy">Esto es una convocatoria profesional y un proceso de selección.</p>
+          <p class="section-copy">
+            Nuestro equipo revisará cada perfil considerando no solamente técnica y experiencia,
+            sino también personalidad artística, presencia escénica, originalidad,
+            profesionalismo, capacidad para trabajar en ensamble y compatibilidad con el universo
+            de Gato Negro.
+          </p>
+          <p class="section-copy">
+            Los perfiles seleccionados para la siguiente etapa recibirán una invitación para
+            casting presencial, junto con fecha, ubicación, requerimientos y material específico
+            de audición.
+          </p>
+          <p class="section-copy">No buscamos llenar un escenario de personas que simplemente sepan hacer cosas.</p>
+          <p class="section-copy">Buscamos construir una compañía.</p>
+          <p class="section-copy">Virtuosismo sin disciplina no nos sirve.</p>
+          <p class="section-copy">Belleza sin personalidad tampoco.</p>
+          <p class="section-copy">
+            Y un ego incapaz de compartir escenario puede ser espectacular durante cinco minutos y
+            una pesadilla durante toda una temporada.
+          </p>
+          <p class="section-copy">Buscamos artistas capaces de entrar solos bajo un reflector y dominar una habitación.</p>
+          <p class="section-copy">Pero también capaces de retroceder dos pasos cuando el reflector pertenece a alguien más.</p>
+          <p class="intro-emphasis">El cabaret nació del encuentro entre disciplinas.<br />Gato Negro existe para volver a reunirlas.</p>
+          <p class="section-copy">Gracias por mostrarnos lo que sabes hacer.</p>
+          <p class="intro-emphasis">Ahora queremos descubrir qué haces sentir.</p>
+
+          <div class="closing-brand">
+            <p class="brand-lockup"><strong>Gato Negro</strong><span>Cabaret &amp; Burlesque</span></p>
+            <p class="brand-tagline">Aquí el cuerpo es sagrado.<br />La libertad también.</p>
+          </div>
+
+          <button class="btn btn-spotlight submit-btn" type="submit">Enviar mi solicitud de audición</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </section>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <p class="marquee-signature">Producción de <span>P0uNc1nG H4cK3rS</span></p>
+        <p>© <span id="year"></span> Gato Negro Cabaret &amp; Burlesque. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

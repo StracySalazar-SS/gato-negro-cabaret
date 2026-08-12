@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificación de Edad · Gato Negro Cabaret</title>
+    <meta
+      name="description"
+      content="Acceso exclusivo para mayores de 18 años. Verifica tu edad para ingresar a Gato Negro Cabaret."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/acceso.css" />
+  </head>
+  <body class="gate-body">
+    <main class="gate-wrap">
+      <section class="gate-card" role="dialog" aria-labelledby="gateTitle" aria-describedby="gateDesc">
+        <img class="gate-logo" src="assets/img/LogoGN.png" alt="Gato Negro Cabaret" />
+        <p class="gate-eyebrow">Acceso restringido</p>
+        <h1 id="gateTitle">Verifica tu edad para continuar</h1>
+        <p id="gateDesc" class="gate-desc">
+          El contenido de este sitio está dirigido exclusivamente a personas mayores de edad
+          (18 años cumplidos, conforme a la legislación mexicana). Ingresa tu fecha de nacimiento
+          para confirmar que puedes ingresar.
+        </p>
+
+        <form class="gate-form" id="gateForm" novalidate>
+          <label for="birthdate">Fecha de nacimiento</label>
+          <input type="date" id="birthdate" name="birthdate" required />
+          <button type="submit" class="btn btn-spotlight gate-submit">Ingresar</button>
+          <p class="gate-error" id="gateError" role="alert" aria-live="assertive"></p>
+        </form>
+
+        <div class="gate-divider"><span>o continúa con</span></div>
+
+        <div class="gate-social">
+          <button type="button" class="btn btn-social btn-facebook" id="facebookAccess">
+            <span class="social-badge" aria-hidden="true">f</span>
+            Continuar con Facebook
+          </button>
+          <button type="button" class="btn btn-social btn-google" id="googleAccess">
+            <span class="social-badge" aria-hidden="true">G</span>
+            Continuar con Google
+          </button>
+        </div>
+
+        <p class="gate-legal">
+          Al ingresar confirmas, bajo tu responsabilidad, que tienes 18 años o más. El acceso será
+          denegado si tu fecha de nacimiento indica una edad menor a la permitida.
+        </p>
+      </section>
+    </main>
+
+    <footer class="gate-footer">
+      <p>Producción de <span>P0uNc1nG H4cK3rS</span></p>
+    </footer>
+
+    <script src="assets/js/acceso.js"></script>
+  </body>
+</html>

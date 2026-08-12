@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Sin verificación de edad no se puede llegar al manifiesto: regresa al control de acceso.
+      if (sessionStorage.getItem("edadVerificada") !== "true") {
+        window.location.replace("acceso.html");
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¿Qué es Gato Negro Cabaret & Burlesque?</title>
+    <meta
+      name="description"
+      content="El manifiesto de Gato Negro Cabaret & Burlesque: el cuerpo como territorio soberano, el cabaret como lenguaje artístico."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/manifiesto.css" />
+  </head>
+  <body class="manifest-body">
+    <div class="curtain-seam" aria-hidden="true">
+      <span class="seam-medallion"></span>
+    </div>
+    <div class="valance" aria-hidden="true"></div>
+
+    <main class="manifest-wrap">
+      <article class="manifest-card">
+        <header class="manifest-header">
+          <p class="kicker">El cuerpo es sagrado</p>
+          <h1>¿Qué es Gato Negro Cabaret &amp; Burlesque?</h1>
+        </header>
+
+        <section class="manifest-section">
+          <p class="text-body">
+            Gato Negro Cabaret &amp; Burlesque es un espectáculo concebido y producido en México
+            por artistas y creativos mexicanos, construido sobre casi siglo y medio de tradición
+            internacional del cabaret y transformado por una sensibilidad inequívocamente nuestra.
+          </p>
+          <p class="text-body">Aquí partimos de una idea muy sencilla:</p>
+          <p class="line-emphasis">el cuerpo humano no es algo de lo que debamos avergonzarnos.</p>
+          <p class="line-emphasis">Lo celebramos.</p>
+          <p class="line-emphasis">Lo respetamos.</p>
+          <p class="text-body">
+            Lo convertimos en movimiento, personaje, humor, sensualidad, música, vestuario, luz y
+            arte.
+          </p>
+        </section>
+
+        <div class="deco-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+        <section class="manifest-section">
+          <p class="text-body">En nuestro escenario no existe un único cuerpo correcto.</p>
+          <p class="text-body">
+            No nos interesa imponer una talla, una edad adulta, una estatura, una complexión, un
+            origen, un tono de piel ni una definición ajena de belleza.
+          </p>
+          <p class="line-emphasis">La belleza humana es demasiado grande para caber en una medida.</p>
+          <p class="text-body">
+            En Gato Negro, la sensualidad pertenece primero a quien decide expresarla.
+          </p>
+          <p class="text-body">
+            Por eso creemos en la autonomía de nuestros artistas adultos, en su consentimiento, en
+            su libertad creativa, en condiciones profesionales de trabajo y en su derecho a
+            decidir cómo quieren presentarse ante el público.
+          </p>
+          <p class="text-body">
+            Una persona que utiliza su cuerpo como instrumento artístico no renuncia a su
+            dignidad.
+          </p>
+          <p class="line-emphasis">La ejerce.</p>
+        </section>
+
+        <div class="deco-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+        <section class="manifest-section">
+          <p class="text-body">
+            El desnudo artístico, cuando existe, no es para nosotros degradación.
+          </p>
+          <p class="line-emphasis">Es lenguaje.</p>
+          <p class="text-body">La sensualidad no es subordinación.</p>
+          <p class="line-emphasis">Es expresión.</p>
+          <p class="text-body">Y el deseo no es incompatible con el respeto.</p>
+          <p class="text-body">Aquí el cuerpo es territorio soberano.</p>
+          <p class="text-body">También lo es la imaginación.</p>
+        </section>
+
+        <div class="deco-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+        <section class="manifest-section">
+          <p class="text-body">
+            Por eso nuestro humor puede ser incómodo, absurdo, elegante, insolente, oscuro y
+            deliberadamente incorrecto.
+          </p>
+          <p class="text-body">Nos reímos de nosotros mismos antes que de nadie.</p>
+          <p class="text-body">No prometemos un mundo sin provocación.</p>
+          <p class="line-emphasis">Prometemos uno sin prejuicios.</p>
+        </section>
+
+        <div class="deco-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+        <section class="manifest-section">
+          <p class="text-body">Gato Negro es cabaret.</p>
+          <p class="text-body">Y el cabaret jamás nació para pedir permiso.</p>
+          <p class="text-body">
+            Nació para reunir en una misma mesa a la belleza y la sátira, al deseo y la
+            inteligencia, a lo sublime y lo ridículo.
+          </p>
+          <p class="text-body">Así ha sido desde Montmartre.</p>
+          <p class="text-body">
+            Nosotros solamente agregamos algo que Francia todavía no tenía en 1881:
+          </p>
+          <p class="line-emphasis line-emphasis--big">México.</p>
+        </section>
+
+        <div class="deco-divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+        <section class="manifest-section manifest-section--invite">
+          <p class="invite-line">Deje sus prejuicios en el guardarropa.</p>
+          <p class="invite-line">Abra la mente.</p>
+          <p class="invite-line">Tome asiento.</p>
+          <p class="invite-line">Las luces están por apagarse.</p>
+          <p class="welcome-line">Willkommen. Bienvenue. Bienvenido.</p>
+        </section>
+
+        <footer class="manifest-brand">
+          <p class="brand-lockup"><strong>Gato Negro</strong><span>Cabaret &amp; Burlesque</span></p>
+          <p class="brand-tagline">Aquí el cuerpo es sagrado.<br />La libertad también.</p>
+
+          <button type="button" class="btn btn-spotlight manifest-enter" id="manifestEnter">
+            Entrar al cabaret
+          </button>
+        </footer>
+      </article>
+    </main>
+
+    <script src="assets/js/manifiesto.js"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitud enviada · Gato Negro Cabaret & Burlesque</title>
+    <meta name="description" content="Tu solicitud de audición fue enviada correctamente a Gato Negro Cabaret & Burlesque." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Work+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="audition-page">
+      <header class="audition-intro container">
+        <img class="audition-logo" src="assets/img/LogoGN.png" alt="Gato Negro Cabaret & Burlesque" />
+        <p class="section-tag">Solicitud recibida</p>
+        <p class="intro-motto">Gracias por atreverte a subir al escenario.</p>
+        <p class="intro-lead">
+          Tu solicitud de audición fue enviada correctamente. Nuestro equipo de casting la revisará
+          y, si tu perfil avanza a la siguiente etapa, te contactaremos por correo electrónico.
+        </p>
+        <p class="intro-emphasis">Mientras tanto, respira, confía y sigue creando.</p>
+        <a class="btn btn-ghost" href="index.html">Volver al formulario</a>
+      </header>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <p class="marquee-signature">Producción de <span>P0uNc1nG H4cK3rS</span></p>
+        <p>© <span id="year"></span> Gato Negro Cabaret & Burlesque. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      const yearElement = document.getElementById("year");
+      if (yearElement) {
+        yearElement.textContent = String(new Date().getFullYear());
+      }
+    </script>
+  </body>
+</html>

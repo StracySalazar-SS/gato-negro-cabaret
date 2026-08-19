@@ -2,6 +2,19 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      const envioConfirmado = new URLSearchParams(window.location.search).get("enviado") === "1";
+
+      if (sessionStorage.getItem("edadVerificada") !== "true") {
+        window.location.replace("acceso.html");
+      } else if (sessionStorage.getItem("manifiestoVisto") !== "true") {
+        window.location.replace("manifiesto.html");
+      } else if (!envioConfirmado && sessionStorage.getItem("solicitudEnviada") !== "true") {
+        window.location.replace("index.html");
+      } else if (envioConfirmado) {
+        sessionStorage.setItem("solicitudEnviada", "true");
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Solicitud enviada · Gato Negro Cabaret & Burlesque</title>
     <meta name="description" content="Tu solicitud de audición fue enviada correctamente a Gato Negro Cabaret & Burlesque." />
